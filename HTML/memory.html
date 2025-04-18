@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Memory Game</title>
+    <link rel="stylesheet" href="../CSS/memory.css">
+    <link rel="stylesheet" href="../CSS/puzzle.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="icon" type="image/png" href="../Media/logo.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../Media/logo.png" alt="Logo">
+        </div>
+        <div class="nav-container">
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#games">Games</a></li>
+                    <li><a href="mailto:astronomyzonee@gmail.com">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="game-container">
+        <h1 class="title">NASA Memory Game</h1>
+
+        <form>
+            <div class="game-controls" id="game-controls">
+                <p>Choose the Picture Date</p>
+
+                <div class="date-selector">
+                    <div class="dateContainer">
+                        <p>Start Date:</p>
+                        <input type="date" id="start-date" class="date" max="" />
+                    </div>
+                    <div class="dateContainer">
+                        <p>End Date:</p>
+                        <input type="date" id="end-date" class="date" max="" />
+                    </div>
+                    <input onclick="reset()" type="reset" class="button reset" value="Reset">
+
+                </div>
+            </div>
+        </form>
+
+        <button onclick="startGame()" class="button memory-button">Start Memory Game</button>
+        <div id="container">
+
+            <div id="game-board">
+
+            </div>
+
+            <div class="fetchedData" id="fetchedData"></div>
+
+            <div id="win-message"></div>
+        </div>
+        <button onclick="reset()" class="button new" id="new">New Game</button>
+
+    </main>
+
+    <footer class="footer">
+        <img class="nasaLogo" src="../Media/NASA_Logo.png" alt="NASA Logo">
+        <p>&copy; 2025 Astronomy Zone. All rights reserved.</p>
+    </footer>
+
+    <script src="../JS/memory.js"></script>
+    <script>
+        const today = new Date().toISOString().split("T")[0];
+        document.getElementById("start-date").setAttribute("max", today);
+        document.getElementById("end-date").setAttribute("max", today);
+    </script>
+</body>
+
+</html>
