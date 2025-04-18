@@ -9,7 +9,7 @@ function getData() {
         let endpoint = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${date}`;
         fetch(endpoint);
     } else {
-        displayError("Kindly choose the picture date or press on Today's Picture");
+        displayError("Kindly choose the picture date or press on Today's Image");
     }
     flag = false;
 }
