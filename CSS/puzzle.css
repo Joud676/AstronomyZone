@@ -131,7 +131,7 @@
 .puzzle-button {
     padding: 14px 28px;
     font-size: 1.1rem;
-    background: linear-gradient(135deg, #8a2be2, #6a0dad);
+    background: linear-gradient(135deg, #a362c158, #472262);
     transition: all 0.3s ease;
     margin-top: 20px;
 }
