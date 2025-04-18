@@ -157,3 +157,8 @@ function displayError(errorMessage) {
     puzzleElement.appendChild(errorElement);
     puzzleElement.style.visibility = "visible";
 }
+
+function reset() {
+    const container = document.getElementById("fetchedData");
+    container.innerHTML = "";
+}
