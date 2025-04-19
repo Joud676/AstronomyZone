@@ -96,6 +96,8 @@ function memoryGameStart(images) {
         card.addEventListener("click", flipCard);
         gameBoard.appendChild(card);
     });
+     const newButton = document.getElementById("new");
+        newButton.style.display = "inline"
 }
 
 
@@ -153,8 +155,6 @@ function checkWin() {
         winMessage.style.background = "rgba(58, 4, 87, 0.575);";
         winMessage.style.boxShadow = "0 0 20px rgba(58, 17, 85, 0.51)";
         winContainer.appendChild(winMessage);
-        const newButton = document.getElementById("new");
-        newButton.style.display = "inline"
     }
 }
 
