@@ -160,10 +160,18 @@ function checkWin() {
 
 function reset() {
     const newButton = document.getElementById("new");
-    newButton.style.display = "none"
-    const container = document.getElementById("container");
-    container.innerHTML = "";
+    newButton.style.display = "none";
+
+    const gameBoard = document.getElementById("game-board");
+    if (gameBoard) gameBoard.innerHTML = "";
+
+    const winMessage = document.getElementById("win-message");
+    if (winMessage) winMessage.innerHTML = "";
+
+    const fetchedData = document.getElementById("fetchedData");
+    if (fetchedData) fetchedData.innerHTML = "";
 }
+
 
 function displayError(errorMessage) {
     const fetchedDataElement = document.getElementById("fetchedData");
