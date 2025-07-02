@@ -1,4 +1,3 @@
-// Joud Jalal Batarfi 2210353
 let flag = false;
 const xhr = new XMLHttpRequest();
 const key = "YLEFkgxyjrYiQziAhkkVuzGg5r93JkQXvS41DOwD";
@@ -162,8 +161,4 @@ function displayError(errorMessage) {
 function reset() {
     const container = document.getElementById("fetchedData");
     container.innerHTML = "";
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 189364e5fd0dfc9677db4dcc8a21ce2ad067d2a7

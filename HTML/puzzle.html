@@ -1,4 +1,3 @@
-<!-- Joud Jalal Batarfi 2210353 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,26 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA Image Puzzle</title>
-    <link rel="stylesheet" href="../CSS/puzzle.css">
-    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="CSS/puzzle.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Montserrat:wght@300;400;600&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="../Media/logo.png">
+    <link rel="icon" type="image/png" href="Media/logo.png">
 
 </head>
 
 <body>
     <header class="header">
         <div class="logo">
-            <img src="../Media/logo.png" alt="Logo">
+            <img src="Media/logo.png" alt="Logo">
         </div>
         <div class="nav-container">
             <nav class="navigation">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../index.html#about">About</a></li>
-                    <li><a href="../index.html#games">Games</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#games">Games</a></li>
                     <li><a href="mailto:astronomyzonee@gmail.com">Contact</a></li>
                 </ul>
             </nav>
@@ -52,10 +51,6 @@
             <button id="fetch-image" class="button fetch" onclick="getData()">Get Image</button>
             <button id="today-image" class="button fetch" onclick="todaysDate()">Today's Image</button>
             <button onclick="reset()" class="button fetch" id="new">Clear Data</button>
-<<<<<<< HEAD
-
-=======
->>>>>>> 189364e5fd0dfc9677db4dcc8a21ce2ad067d2a7
         </div>
 
         <div class="fetchedData" id="fetchedData">
@@ -68,11 +63,11 @@
     </main>
 
     <footer class="footer">
-        <img class="nasaLogo" src="../Media/NASA_Logo.png" alt="NASA Logo">
+        <img class="nasaLogo" src="Media/NASA_Logo.png" alt="NASA Logo">
         <p>&copy; 2025 Astronomy Zone. All rights reserved.</p>
     </footer>
 
-    <script src="../JS/puzzle.js"></script>
+    <script src="JS/puzzle.js"></script>
     <script>
         const today = new Date().toISOString().split("T")[0];
         document.getElementById("image-date").setAttribute("max", today);
