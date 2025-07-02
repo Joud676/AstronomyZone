@@ -1,6 +1,8 @@
 const xhr = new XMLHttpRequest();
 const key = "YLEFkgxyjrYiQziAhkkVuzGg5r93JkQXvS41DOwD";
 
+const winContainer = document.getElementById("win-message");
+
 
 async function fetchAPOD(endpoint) {
     try {
@@ -148,7 +150,6 @@ function resetBoard() {
 function checkWin() {
     const allMatched = document.querySelectorAll(".card.matched").length === apodImages.length;
     if (allMatched) {
-        const winContainer = document.getElementById("win-message");
         winContainer.innerHTML = "";
         const winMessage = document.createElement("p");
         winMessage.classList.add("winMessage");
