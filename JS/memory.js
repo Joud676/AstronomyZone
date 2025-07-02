@@ -98,8 +98,13 @@ function memoryGameStart(images) {
         card.addEventListener("click", flipCard);
         gameBoard.appendChild(card);
     });
+<<<<<<< HEAD
     const newButton = document.getElementById("new");
     newButton.style.display = "inline"
+=======
+     const newButton = document.getElementById("new");
+        newButton.style.display = "inline"
+>>>>>>> 189364e5fd0dfc9677db4dcc8a21ce2ad067d2a7
 }
 
 
