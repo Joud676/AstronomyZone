@@ -1,8 +1,6 @@
 const xhr = new XMLHttpRequest();
 const key = "YLEFkgxyjrYiQziAhkkVuzGg5r93JkQXvS41DOwD";
 
-const winContainer = document.getElementById("win-message");
-
 
 async function fetchAPOD(endpoint) {
     try {
@@ -13,6 +11,7 @@ async function fetchAPOD(endpoint) {
         displayError(error.message);
     }
 }
+
 
 let apodImages = [];
 
@@ -76,8 +75,6 @@ function memoryGameStart(images) {
     const errorDiv = document.getElementById("fetchedData");
     errorDiv.innerHTML = "";
     gameBoard.innerHTML = "";
-    winContainer.innerHTML = "";
-
 
     images.forEach((imageData, index) => {
         const card = document.createElement("div");
@@ -91,7 +88,7 @@ function memoryGameStart(images) {
 🚀
                 </div>
                 <div class="card-back">
-                <img src="${imageData.url}" alt="${imageData.title}" />
+                    <img src="${imageData.url}" alt="${imageData.title}" />  <!-- The image is on the back -->
                 </div>
             </div>
         `;
@@ -150,6 +147,7 @@ function resetBoard() {
 function checkWin() {
     const allMatched = document.querySelectorAll(".card.matched").length === apodImages.length;
     if (allMatched) {
+        const winContainer = document.getElementById("win-message");
         winContainer.innerHTML = "";
         const winMessage = document.createElement("p");
         winMessage.classList.add("winMessage");
