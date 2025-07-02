@@ -1,3 +1,4 @@
+<!-- Joud Jalal Batarfi 2210353 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,17 +39,20 @@
             <div class="game-controls" id="game-controls">
                 <p>Choose the Picture Date</p>
                 <div class="date-selector">
-                    <input type="date" id="image-date" class="date" max="">
+                    <input type="date" id="image-date" class="date">
                     <div>
                         <input type="reset" class="button reset" value="Reset">
                     </div>
                 </div>
             </div>
+
         </form>
 
         <div class="button-container">
             <button id="fetch-image" class="button fetch" onclick="getData()">Get Image</button>
             <button id="today-image" class="button fetch" onclick="todaysDate()">Today's Image</button>
+            <button onclick="reset()" class="button fetch" id="new">Clear Data</button>
+
         </div>
 
         <div class="fetchedData" id="fetchedData">

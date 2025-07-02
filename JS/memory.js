@@ -1,3 +1,4 @@
+// Joud Jalal Batarfi 2210353
 const xhr = new XMLHttpRequest();
 const key = "YLEFkgxyjrYiQziAhkkVuzGg5r93JkQXvS41DOwD";
 
@@ -11,7 +12,6 @@ async function fetchAPOD(endpoint) {
         displayError(error.message);
     }
 }
-
 
 let apodImages = [];
 
@@ -75,6 +75,8 @@ function memoryGameStart(images) {
     const errorDiv = document.getElementById("fetchedData");
     errorDiv.innerHTML = "";
     gameBoard.innerHTML = "";
+    winContainer.innerHTML = "";
+
 
     images.forEach((imageData, index) => {
         const card = document.createElement("div");
@@ -88,7 +90,7 @@ function memoryGameStart(images) {
 🚀
                 </div>
                 <div class="card-back">
-                    <img src="${imageData.url}" alt="${imageData.title}" />  <!-- The image is on the back -->
+                <img src="${imageData.url}" alt="${imageData.title}" />
                 </div>
             </div>
         `;
@@ -96,6 +98,8 @@ function memoryGameStart(images) {
         card.addEventListener("click", flipCard);
         gameBoard.appendChild(card);
     });
+    const newButton = document.getElementById("new");
+    newButton.style.display = "inline"
 }
 
 
@@ -153,17 +157,23 @@ function checkWin() {
         winMessage.style.background = "rgba(58, 4, 87, 0.575);";
         winMessage.style.boxShadow = "0 0 20px rgba(58, 17, 85, 0.51)";
         winContainer.appendChild(winMessage);
-        const newButton = document.getElementById("new");
-        newButton.style.display = "inline"
     }
 }
 
 function reset() {
     const newButton = document.getElementById("new");
-    newButton.style.display = "none"
-    const container = document.getElementById("container");
-    container.innerHTML = "";
+    newButton.style.display = "none";
+
+    const gameBoard = document.getElementById("game-board");
+    if (gameBoard) gameBoard.innerHTML = "";
+
+    const winMessage = document.getElementById("win-message");
+    if (winMessage) winMessage.innerHTML = "";
+
+    const fetchedData = document.getElementById("fetchedData");
+    if (fetchedData) fetchedData.innerHTML = "";
 }
+
 
 function displayError(errorMessage) {
     const fetchedDataElement = document.getElementById("fetchedData");
