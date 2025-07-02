@@ -49,7 +49,6 @@ async function startGame() {
         const endpoint = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${formattedDate}`;
         const data = await fetchAPOD(endpoint);
         if (data) apodImages.push(data);
-        apodImages.push(data);
         currentDate.setDate(currentDate.getDate() + 1);
     }
 
