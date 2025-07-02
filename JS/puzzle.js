@@ -135,6 +135,9 @@ function appendDate(infoElement, date) {
 function appendCopyright(infoElement, copyright) {
     const copyrightElement = document.createElement("p");
     copyrightElement.classList.add("ImgInfo");
+    if (copyright === "undefined") {
+        copyright = "Not Available";
+    }
     copyrightElement.textContent = `Copyright: ${copyright}`;
     infoElement.appendChild(copyrightElement);
 }
