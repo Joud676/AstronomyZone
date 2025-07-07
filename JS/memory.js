@@ -155,7 +155,7 @@ function checkWin() {
         winContainer.innerHTML = "";
         const winMessage = document.createElement("p");
         winMessage.classList.add("winMessage");
-        winMessage.textContent = "You win! 🎉";
+        winMessage.textContent = "You won! 🎉";
         winMessage.style.boxShadow = "0 0 20px rgba(58, 17, 85, 0.51)";
         winContainer.appendChild(winMessage);
         winMessage.scrollIntoView({ behavior: "smooth" });
