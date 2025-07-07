@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    padding: 0px;
     font-family: 'Orbitron', 'Montserrat', sans-serif;
     background-color: #0a0a1a;
     color: #f0e6ff;
@@ -84,11 +85,13 @@ body {
 .title {
     font-size: 3.2rem;
     margin-bottom: 25px;
+    padding: 10px;
     color: #a085b9;
     font-weight: 800;
     letter-spacing: 1px;
     text-shadow: 0 0 20px rgba(179, 98, 255, 0.3);
     animation: glow 3s ease-in-out infinite alternate;
+
 }
 
 @keyframes glow {
@@ -129,6 +132,8 @@ body {
     filter: drop-shadow(0 0 15px rgba(120, 0, 216, 0.6));
     padding-top: 60px;
 }
+
+
 
 @keyframes float {
 
@@ -308,6 +313,13 @@ body {
     .title {
         font-size: 2.5rem;
         text-align: center;
+        padding: 10px;
+
+    }
+
+    #title {
+        padding-left: 17px;
+        padding-right: 17px;
     }
 
     .intro-content p {
@@ -331,7 +343,15 @@ body {
 @media (max-width: 380px) {
     .title {
         font-size: 2rem;
+        padding: 10px;
+
     }
+
+    #title {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
 
     .intro-content p {
         font-size: 1rem;

@@ -1,6 +1,7 @@
 const xhr = new XMLHttpRequest();
 const key = "YLEFkgxyjrYiQziAhkkVuzGg5r93JkQXvS41DOwD";
 
+const winContainer = document.getElementById("win-message");
 
 async function fetchAPOD(endpoint) {
     try {
@@ -17,6 +18,7 @@ let apodImages = [];
 
 async function startGame() {
 
+    winContainer.innerText = "";
     const startInput = document.getElementById("start-date").value;
     const endInput = document.getElementById("end-date").value;
 
@@ -47,8 +49,10 @@ async function startGame() {
         const formattedDate = currentDate.toISOString().split("T")[0];
         const endpoint = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${formattedDate}`;
         const data = await fetchAPOD(endpoint);
-        if (data) apodImages.push(data);
-        apodImages.push(data);
+        if (data) {
+            apodImages.push(data);
+            apodImages.push(data);
+        }
         currentDate.setDate(currentDate.getDate() + 1);
     }
 
@@ -88,13 +92,14 @@ function memoryGameStart(images) {
 🚀
                 </div>
                 <div class="card-back">
-                    <img src="${imageData.url}" alt="${imageData.title}" />  <!-- The image is on the back -->
+                    <img src="${imageData.url}" alt="${imageData.title}" />
                 </div>
             </div>
         `;
 
         card.addEventListener("click", flipCard);
         gameBoard.appendChild(card);
+        gameBoard.scrollIntoView({ behavior: "smooth" });
     });
     const newButton = document.getElementById("new");
     newButton.style.display = "inline"
@@ -147,14 +152,13 @@ function resetBoard() {
 function checkWin() {
     const allMatched = document.querySelectorAll(".card.matched").length === apodImages.length;
     if (allMatched) {
-        const winContainer = document.getElementById("win-message");
         winContainer.innerHTML = "";
         const winMessage = document.createElement("p");
         winMessage.classList.add("winMessage");
         winMessage.textContent = "You win! 🎉";
-        winMessage.style.background = "rgba(58, 4, 87, 0.575);";
         winMessage.style.boxShadow = "0 0 20px rgba(58, 17, 85, 0.51)";
         winContainer.appendChild(winMessage);
+        winMessage.scrollIntoView({ behavior: "smooth" });
     }
 }
 

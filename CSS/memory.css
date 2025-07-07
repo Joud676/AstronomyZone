@@ -123,6 +123,10 @@
         padding: 10px;
     }
 
+    #title {
+        text-align: center;
+    }
+
     .reset {
         display: block;
         margin: 0 auto;
