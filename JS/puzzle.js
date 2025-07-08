@@ -115,6 +115,7 @@ function appendPicture(imgBackgroundElement, url, title, puzzleElement) {
     pictureElement.src = url;
     pictureElement.alt = title;
     imgBackgroundElement.appendChild(pictureElement);
+    imgBackgroundElement.scrollIntoView({ behavior: 'smooth' });
     puzzleElement.style.visibility = "visible";
 }
 
