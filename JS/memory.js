@@ -2,6 +2,8 @@ const xhr = new XMLHttpRequest();
 const key = "YLEFkgxyjrYiQziAhkkVuzGg5r93JkQXvS41DOwD";
 
 const winContainer = document.getElementById("win-message");
+const gameBoard = document.getElementById("game-board");
+const newButton = document.getElementById("new");
 
 async function fetchAPOD(endpoint) {
     try {
@@ -17,8 +19,10 @@ async function fetchAPOD(endpoint) {
 let apodImages = [];
 
 async function startGame() {
+    gameBoard.innerHTML = ""
+    winContainer.innerHTML = "";
+    newButton.style.display = "none";
 
-    winContainer.innerText = "";
     const startInput = document.getElementById("start-date").value;
     const endInput = document.getElementById("end-date").value;
 
@@ -29,6 +33,12 @@ async function startGame() {
 
     const startDate = new Date(startInput);
     const endDate = new Date(endInput);
+
+    const todaysDate = new Date();
+    if (startDate > todaysDate || endDate > todaysDate) {
+        displayError("Please select dates that are today or earlier. Future dates are not allowed.");
+        return;
+    }
 
     if (endDate < startDate) {
         displayError("End date must be after start date");
@@ -75,7 +85,6 @@ let secondCard = null;
 let lockBoard = false;
 
 function memoryGameStart(images) {
-    const gameBoard = document.getElementById("game-board");
     const errorDiv = document.getElementById("fetchedData");
     errorDiv.innerHTML = "";
     gameBoard.innerHTML = "";
@@ -163,10 +172,8 @@ function checkWin() {
 }
 
 function reset() {
-    const newButton = document.getElementById("new");
     newButton.style.display = "none";
 
-    const gameBoard = document.getElementById("game-board");
     if (gameBoard) gameBoard.innerHTML = "";
 
     const winMessage = document.getElementById("win-message");
@@ -187,4 +194,6 @@ function displayError(errorMessage) {
 
     fetchedDataElement.appendChild(errorElement);
     fetchedDataElement.style.visibility = "visible";
+    fetchedDataElement.scrollIntoView({ behavior: "smooth" });
+
 }
